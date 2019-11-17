@@ -2,7 +2,4 @@
 
 from distutils.core import setup
 
-setup(name='PERT',
-      version='0.1',
-      py_modules=['PERT']
-      )
+setup(name="PERT", version="0.1", py_modules=["PERT"])
