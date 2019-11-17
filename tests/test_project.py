@@ -24,6 +24,17 @@ def test_addTask():
     assert project.findTask("task3")
 
 
+def test_addDuplicate():
+    project = pert.Project()
+
+    project.addTask(pert.Task("task1"))
+
+    with pytest.raises(AttributeError) as exception:
+        project.addTask(pert.Task("task1", title="different title"))
+
+    assert "already exists" in str(exception.value)
+
+
 def test_dependencies():
     project = pert.Project()
 

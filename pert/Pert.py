@@ -61,11 +61,13 @@ class Project:
         return node
 
     def _findTask(self, id):
-        if not self._tasks:
-            return None
-        return next(task for task in self._tasks if task.id == id)
+        return next((task for task in self._tasks if task.id == id), None)
 
     def addTask(self, task, depends_on=[]):
+        if self._findTask(task.id) is not None:
+            raise AttributeError(
+                "Task <{}> already exists in this project.".format(task)
+            )
 
         dependencies = []
         for t in depends_on:
