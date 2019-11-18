@@ -1,0 +1,30 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg width="1024" height="640" version="1.1" xmlns="http://www.w3.org/2000/svg">
+<desc>PERT Chart</desc>
+<rect width="100%" height="100%" fill="#ffffff"/>
+<g>
+<rect height="90" width="150" x="135" y="52" rx="15" stroke-width="3" stroke="#000000" fill="#66a266" />
+<text x="145" y="62" font-size="14">
+<tspan x="145" dy="1em">My least</tspan>
+<tspan x="145" dy="1em">favourite task</tspan>
+</text></g>
+
+<g>
+<rect height="90" width="150" x="529" y="249" rx="15" stroke-width="3" stroke="#000000" fill="#66a266" />
+<text x="539" y="259" font-size="14">
+<tspan x="539" dy="1em">Create a new test</tspan>
+<tspan x="539" dy="1em">for the current</tspan>
+<tspan x="539" dy="1em">suite</tspan>
+</text></g>
+
+<g>
+<rect height="90" width="150" x="459" y="314" rx="15" stroke-width="3" stroke="#000000" fill="#66a266" />
+<text x="469" y="324" font-size="14">
+<tspan x="469" dy="1em">Transform fossil</tspan>
+<tspan x="469" dy="1em">from lab into a</tspan>
+<tspan x="469" dy="1em">live and</tspan>
+<tspan x="469" dy="1em">dangerous</tspan>
+<tspan x="469" dy="1em">dinosaur</tspan>
+</text></g>
+</svg>
