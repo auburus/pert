@@ -25,13 +25,11 @@ def test_save(output_file):
         pert.Task("Transform fossil from lab into a live and dangerous dinosaur")
     )
 
-    svg = pert.SVG(project)
-
+    svg = pert.SVG.fromProject(project)
+    svg.arrange(pert.Arrangement.Random)
     svg.save(output_file)
 
     assert os.path.isfile(output_file)
 
     with open(output_file) as f:
-        # Well, the current output right now is random, so it breaks this test :(
-        # assert svg.getContents() == f.read()
-        pass
+        assert svg.svg == f.read()

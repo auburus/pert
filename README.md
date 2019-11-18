@@ -17,7 +17,8 @@ project.addTask(
     pert.Task( id="1", title="Transform fossil from lab into a live and dangerous dinosaur")
 )
 
-svg = pert.SVG(project)
+svg = pert.SVG.fromProject(project)
+svg.arrange(pert.Arrangement.Random)
 svg.save("/tmp/file.svg")
 ```
 

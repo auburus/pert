@@ -3,9 +3,9 @@ from enum import Enum
 
 class Task:
     """ Task data object
-	This object just holds the information that makes a task a task,
-	but it doesn't track any of the task's dependencies
-	"""
+    This object just holds the information that makes a task a task,
+    but it doesn't track any of the task's dependencies
+    """
 
     def __init__(self, id, title=None, description=""):
         self._id = id
@@ -34,8 +34,8 @@ class DependencyType(Enum):
 
 class Dependency:
     """
-	Tracks the dependency between two individual tasks
-	"""
+    Tracks the dependency between two individual tasks
+    """
 
     def __init__(self, task1, task2, type):
         self.task1 = task1
@@ -45,9 +45,9 @@ class Dependency:
 
 class Project:
     """
-	Effectively, this is a Directed Acyclic Graph (DAG)
-	with some extra handy functions
-	"""
+    Effectively, this is a Directed Acyclic Graph (DAG)
+    with some extra handy functions
+    """
 
     def __init__(self):
         self._tasks = []
