@@ -88,3 +88,7 @@ class Project:
             for d in self._dependencies
             if d.task1 == task and d.type == DependencyType.DEPENDS_ON
         ]
+
+    @property
+    def tasks(self):
+        return self._tasks
