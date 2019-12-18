@@ -19,11 +19,13 @@ def output_file():
 
 def test_save(output_file):
     project = pert.Project()
-    project.addTask(pert.Task("My least favourite task"))
-    project.addTask(pert.Task("Create a new test for the current suite"))
-    project.addTask(
-        pert.Task("Transform fossil from lab into a live and dangerous dinosaur")
-    )
+    task1 = pert.Task("My least favourite task")
+    task2 = pert.Task("Create a new test for the current suite")
+    task3 = pert.Task("Transform fossil from lab into a live and dangerous dinosaur")
+
+    project.addTask(task1)
+    project.addTask(task2, depends_on=[task1])
+    project.addTask(task3, depends_on=[task1, task2])
 
     pert_chart = pert.Chart(project, arrangement=pert.Arrangement.Random)
     pert_chart.save(output_file, format="svg")

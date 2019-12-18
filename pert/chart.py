@@ -24,6 +24,13 @@ class Box:
     def height(self):
         return self._height
 
+    @property
+    def arrow_origin(self):
+        return (int(self.x + self._width), int(self.y + self._height / 2))
+
+    @property
+    def arrow_destination(self):
+        return (int(self.x), int(self.y + self._height / 2))
 
 class BoxBuilder:
     """
@@ -71,9 +78,22 @@ class Chart:
         )
         self._arrangement = arrangement
 
+    def find_box(self, task):
+        return next(b for b in self._boxes if b.task == task)
+
+    @property
+    def boxes(self):
+        return self._boxes
+
+    def find_dependencies(self, box):
+        return map(lambda t: self.find_box(t), self._project.findDependencies(box.task))
+
     def save(self, filepath, format):
         if format == "svg":
-            output = formatters.svg(self._boxes)
+            output = formatters.svg(self)
+        else:
+            raise RuntimeError("Invalid format <{}>".format((format)))
+
 
         with open(filepath, "w") as f:
             f.write(output)
